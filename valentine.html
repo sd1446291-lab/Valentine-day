@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Day</title>
+    <style>
+        body {
+            background: #ffe6f0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+            overflow: hidden;
+        }
+        h1 { color: #e6005c; }
+        p { font-size: 20px; }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            margin: 15px;
+            position: absolute;
+        }
+        .yes {
+            background-color: #ff4d88;
+            color: white;
+        }
+        .no {
+            background-color: #ccc;
+        }
+        .shayari {
+            text-align: left;
+            margin: 30px 20%;
+            font-style: italic;
+            color: #e6005c;
+            font-size: 22px;
+        }
+        #message {
+            position: relative;
+            margin-bottom: 100px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Happy Valentine’s Day 💖</h1>
+<p id="message">Will you be my Valentine forever? 💍</p>
+
+<button id="yesBtn" class="yes" onclick="showLove()">Yes</button>
+<button id="noBtn" class="no">No</button>
+
+<!-- Romantic Song -->
+<audio id="loveSong" preload="auto">
+    <source src="tumho.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const message = document.getElementById('message');
+
+function showLove() {
+
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+
+    const shayari = document.createElement('p');
+    shayari.className = 'shayari';
+    shayari.innerHTML = "I have completely fallen for you.<br>" +
+                        "Everything you do, everything you say, everything you are.<br>" +
+                        "You're my first thought in the morning, you're my last thought before I fall asleep,<br>" +
+                        "and you're almost every thought in between. 💖";
+    document.body.appendChild(shayari);
+
+    const valentine = document.createElement('p');
+    valentine.style.fontSize = "26px";
+    valentine.style.color = "#ff1a75";
+    valentine.style.marginTop = "20px";
+    valentine.innerHTML = "U R My Valentine Forever Bhushan 💖";
+    document.body.appendChild(valentine);
+
+    const song = document.getElementById('loveSong');
+    song.play();
+}
+
+noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>
